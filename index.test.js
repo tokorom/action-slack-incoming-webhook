@@ -24,7 +24,7 @@ test('test create message with blocks', () => {
   ]
 
   setupInputs({
-    'blocks': blocks,
+    'blocks': JSON.stringify(blocks),
   })
 
   const message = createMessage()
@@ -40,7 +40,7 @@ test('test create message with attachments', () => {
   ]
 
   setupInputs({
-    'attachments': attachments,
+    'attachments': JSON.stringify(attachments),
   })
 
   const message = createMessage()
@@ -54,7 +54,7 @@ test('test create message with thread_ts', () => {
 
   const message = createMessage()
 
-  expect(message.thread_ts).toEqual('1571797440.006700')
+  expect(message.thread_ts).toEqual(1571797440.0067)
 })
 
 test('test create message with double', () => {
@@ -80,7 +80,7 @@ test('test create message with bool', () => {
 function setupInputs(inputs) {
   for (const input in inputs) {
     let key = 'INPUT_' + input.toUpperCase()
-    process.env[key] = JSON.stringify(inputs[input])
+    process.env[key] = inputs[input]
   }
 }
 
