@@ -1,13 +1,24 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Slack Incoming Webhook'
+description: 'Post a message to Slack with Incoming Webhook'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
-    required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps 
-    description: 'The message to output'
+  text:
+    description: "The usage of this field changes depending on whether you`re using blocks or not. If you are, this is used as a fallback string to display in notifications. If you aren't, this is the main body text of the message. It can be formatted as plain text, or with mrkdwn. This field is not enforced as required when using blocks, however it is highly recommended that you include it as the aforementioned fallback."
+    required: false
+  blocks:
+    description: 'An array of layout blocks in the same format as described in the building blocks guide.'
+    required: false
+  attachments:
+    description: 'An array of legacy secondary attachments. We recommend you use blocks instead.'
+    required: false
+  thread_ts:
+    description: 'The ID of another un-threaded message to reply to.'
+    required: false
+  mrkdwn:
+    description: 'Determines whether the text field is rendered according to mrkdwn formatting or not. Defaults to true.'
+    required: false
+branding:
+  icon: 'message-circle'
+  color: 'white'
 runs:
   using: 'node12'
   main: 'dist/index.js'
