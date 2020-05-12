@@ -1,5 +1,4 @@
 const core = require('@actions/core')
-const createMessage = require('./lib/createMessage')
 
 async function run() {
   try { 
@@ -9,7 +8,13 @@ async function run() {
       throw new Error('Missing INCOMING_WEBHOOK_URL environment var')
     }
 
+    const createMessage = require('./lib/createMessage')
     const message = createMessage()
+
+    const sendMessage = require('./lib/sendMessage')
+    const json = await sendMessage(message, INCOMING_WEBHOOK_URL)
+
+    core.setOutput('response', json)
   } 
   catch (error) {
     core.setFailed(error.message)

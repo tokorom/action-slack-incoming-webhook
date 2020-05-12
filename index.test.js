@@ -1,13 +1,6 @@
 const process = require('process')
-const cp = require('child_process')
 const path = require('path')
-const run = require('./run')
 const createMessage = require('./lib/createMessage')
-
-test('test runs', () => {
-  const ip = path.join(__dirname, 'index.js')
-  console.log(cp.execSync(`INCOMING_WEBHOOK_URL=foo node ${ip}`).toString())
-})
 
 test('test create message with text', () => {
   setupInputs({
