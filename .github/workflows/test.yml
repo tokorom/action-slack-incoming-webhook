@@ -30,15 +30,19 @@ jobs:
             {
               "color": "good",
               "author_name": "${{ github.actor }}",
-              "author_icon": "http://github.com/${{ github.actor }}.png?size=32",
+              "author_icon": "${{ github.event.sender.avatar_url }}",
               "fields": [
                 {
-                  "title": "Actions URL",
-                  "value": "https://github.com/${{ github.repository }}/actions"
+                  "title": "Commit Message",
+                  "value": "${{ github.event.head_commit.message }}"
                 },
                 {
-                  "title": "Commit message",
-                  "value": "${{ env.COMMIT_MESSAGE }}"
+                  "title": "GitHub Actions URL",
+                  "value": "${{ github.event.repository.url }}/actions/runs/${{ github.run_id }}"
+                },
+                {
+                  "title": "Compare URL",
+                  "value": "${{ github.event.compare }}"
                 }
               ]
             }
