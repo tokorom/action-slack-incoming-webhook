@@ -71,3 +71,16 @@ Here's what the Slack message would look like:
 
 ![sample-advanced](docs/images/sample-advanced.png)
 
+## Change the icon
+
+You can change the icon for a Slack message in the Slack App settings.
+
+Slack's new Incoming Webhooks do not allow API payloads to override the icon.
+
+- Open [Your Apps](https://api.slack.com/apps) page
+- Select your app for Incoming Webhooks
+- Select `Basic Information` > `Display Information`
+- Set any icon you like!
+
+![screenshot](docs/images/ss-1589353124.png)
+
