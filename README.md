@@ -3,11 +3,11 @@
   <a href="https://github.com/actions/javascript-action/actions"><img alt="javscript-action status" src="https://github.com/actions/javascript-action/workflows/units-test/badge.svg"></a>
 </p>
 
-# Slack Incoming Webhook for GitHub Actions
+# GitHub Action for Slack Incoming Webhook
 
 ## Feature
 
-- Use Incoming Webhooks on Slack App
+- Send a message using Incoming Webhooks on Slack App
     - Don't use legacy incoming Webhooks on custom integrations
 - You can use the names of the fields in the Message payloads provided by Slack
     - https://api.slack.com/reference/messaging/payload
@@ -28,6 +28,10 @@ Here's what the Slack message would look like:
 <img src="docs/images/slack-message-example-simple.png" width="540">
 
 ## Advanced Usages
+
+- You can flexibly specify `attachments` and `blocks`
+    - https://api.slack.com/reference/messaging/attachments
+    - https://api.slack.com/reference/block-kit/blocks
 
 ```yaml
 - name: Slack Notification on SUCCESS
