@@ -25,7 +25,7 @@
 
 Here's what the Slack message would look like:
 
-<img src="docs/images/slack-message-example-simple.png" width="540">
+![simple-sample](docs/images/sample-simple.png)
 
 ## Advanced Usages
 
@@ -69,5 +69,5 @@ Here's what the Slack message would look like:
 
 Here's what the Slack message would look like:
 
-<img src="docs/images/slack-message-example-advanced.png" width="540">
+![sample-advanced](docs/images/sample-advanced.png)
 
