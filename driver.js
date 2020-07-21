@@ -7,7 +7,7 @@ function setupInputs(inputs) {
   }
 }
 
-process.env.INCOMING_WEBHOOK_URL = 'https://hooks.slack.com/services/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'
+process.env.INCOMING_WEBHOOK_URL = 'YOUR WEBHOOK URL'
 
 setupInputs({
   text: "Hello"
