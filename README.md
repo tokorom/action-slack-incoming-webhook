@@ -35,7 +35,8 @@ Here's what the Slack message would look like:
 
 ```yaml
 - name: Set COMMIT_MESSAGE
-  run: echo ::set-env name=COMMIT_MESSAGE::$(echo "${{ github.event.head_commit.message }}" | tr '\n' ' ')
+    run: |
+      echo "COMMIT_MESSAGE=${{ github.event.head_commit.message }}" | tr '\n' ' ' >> $GITHUB_ENV
 - name: Slack Notification on SUCCESS
   if: success()
   uses: tokorom/action-slack-incoming-webhook@main
