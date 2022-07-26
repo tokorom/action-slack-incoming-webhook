@@ -52,7 +52,7 @@ Here's what the Slack message would look like:
           "fields": [
             {
               "title": "Commit Message",
-              "value": "${{ env.COMMIT_MESSAGE }}"
+              "value": "${{ github.event.head_commit.message }}"
             },
             {
               "title": "GitHub Actions URL",
