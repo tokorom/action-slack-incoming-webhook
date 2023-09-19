@@ -11,6 +11,7 @@
     - Don't use legacy incoming Webhooks on custom integrations
 - You can use the names of the fields in the Message payloads provided by Slack
     - https://api.slack.com/reference/messaging/payload
+    - https://app.slack.com/block-kit-builder (Sign in needed)
 
 ## Simple Usage
 
